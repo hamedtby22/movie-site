@@ -1,0 +1,47 @@
+@use '../scss/' as *;
+
+.formcontainer {
+    margin:0 auto;
+    width:400px;
+
+    @include mobile {
+        width: 100%;
+    }
+    &__info {
+        width:300px;
+        margin:50px;
+        border:1px solid #EF5B0C;
+        padding:20px;
+        borderRadius:10px;
+        height:200px;
+
+        @include mobile {
+            width: 80%;
+            margin: 15px;
+        }
+        input {
+            width: 300px;
+            height: 40px;
+            border: none;
+            border-bottom: 1px solid red;
+            outline: none;
+            
+        }
+        ::placeholder {
+            padding: 10px;
+            color: #EF5B0C;
+            font-family: monospace;
+        }
+        &__btn {
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            button {
+                margin: 10px;
+                padding: 10px;
+                font-family:monospace;
+            }
+        }
+    }
+}

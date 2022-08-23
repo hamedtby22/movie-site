@@ -1,0 +1,170 @@
+@use "../../scss/" as *;
+
+.banner {
+    height: 100vh;
+    position: relative;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    }
+
+    @include tablet {
+        width: 100%;
+        position: relative;
+    }
+    @include mobile {
+        height: 170vh;
+    }
+
+}
+
+.movie-content {
+    @include flex(flex-start, flex-start);
+    max-width: 1260px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 0 2rem;
+    color: white;
+
+    @include tablet {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 80%;
+    }
+   
+    &__poster {
+        flex: 1;
+        
+
+        &__img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: $border-radius;
+            padding-top: 165%;
+            margin-left: 20px;
+            position: relative;
+
+            @include tablet {
+                display: none;
+            }
+            @include mobile {
+                display: inline;
+            }
+            
+        }
+        &__img span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            :hover {
+                background-color: #cecece;
+                border-radius: 0 30px 0 10px;
+                transition: all 0.7s ease-in;
+            }
+            
+        }
+    }
+
+    &__info {
+        width: 70%;
+        padding-left: 2rem;
+        align-items: center;
+        direction: ltr;
+        
+        @include mobile {
+            width: 100%;
+            padding-left: 0;
+            
+        }
+
+        & > * {
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            line-height: 1;
+            align-items: center;
+            @include mobile {
+                font-size: 2rem;
+                line-height: normal;
+            }
+        }
+
+        .genres {
+            & > * ~ * {
+                margin-left: 0.5rem;
+                @include mobile {
+                    margin-left: 0;
+                }
+            }
+
+            &__items {
+                padding: 0.5rem 1.5rem;
+                border: 2px solid $white;
+                border-radius: $border-radius;
+                font-size: 0.8rem;
+                font-weight: 600;
+                background-color: $body-bg;
+            }      
+        }
+    }
+}
+
+.casts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+
+    &__item {
+        &__img {
+            padding-top: 160px;
+            background-size: cover;
+            margin-bottom: 0.5rem;
+        }
+
+        &__name {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.video {
+    margin-bottom: 3rem;
+    margin-top: 20px;
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+
+}
+.links {
+    @include flex(center,space-around);
+    padding:20px;
+
+    @include mobile {
+        padding: 0%;
+    }
+}

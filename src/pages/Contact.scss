@@ -1,0 +1,46 @@
+@use '../scss/'as * ;
+
+.contact {
+    @include flex(center,space-between);
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        input {
+            width: 400px;
+            height: 50px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #FF6701;
+            margin: 10px;
+            color: #FF6701;
+            background-color: #e9e9e9;
+            
+            @include mobile {
+                width: 200px;
+            }
+        }
+        ::placeholder {
+            color: #FF6701;
+            font-family: sans-serif;
+            font-weight: bold;
+            padding: 0 10px;
+          }
+        
+          @include mobile {
+            textarea {
+                width: 80%;   
+                background-color: #e9e9e9;
+            }   
+          }
+    }
+    
+    img {
+        @include tablet {
+            display: none;
+        }
+    }
+    
+}

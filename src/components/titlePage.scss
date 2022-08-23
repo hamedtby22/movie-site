@@ -1,0 +1,17 @@
+@use '../scss/changing' as * ;
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 30px 0 10px 0;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        height: 100px;
+
+    }
+}

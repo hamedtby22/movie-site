@@ -1,0 +1,63 @@
+@use '../scss/' as *;
+
+.favorite_Container {
+    padding: 30px;
+
+    @include mobile {
+        padding: 0%;
+    }
+}
+
+.favorite {
+    @include flex(center,center);
+    border: 1px solid red($color: #000000);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.527);
+    background-color: #61616186;
+    margin: 10px;
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: rgba(32, 32, 32, 0.178);
+    }
+    img {
+        height: 300px;
+        border-radius: 10px;
+        margin-left: 10px;
+
+        @include mobile {
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+    }
+
+    button {
+        @include mobile {
+            width: 100%;
+            height: 50px;
+        }
+    }
+}
+.genres {
+    margin: 1rem;
+
+    &__items {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #FF6701;
+        background-color: $body-bg;
+    }
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+    }
+
+}

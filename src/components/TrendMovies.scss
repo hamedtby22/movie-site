@@ -1,0 +1,18 @@
+@use "../scss/responsive" as *;
+.container {
+    .swiper-slide {
+        width: 15%;
+
+        @include tablet {
+            width: 30%;
+        }
+    
+        @include mobile {
+            width: 40%;
+        }
+    }
+    .swiper-slide img {
+        border-radius: 10px;
+    }
+    
+}

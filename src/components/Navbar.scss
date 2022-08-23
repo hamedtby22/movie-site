@@ -1,0 +1,24 @@
+@use '../scss/' as *;
+
+.appbar {
+    @include mobile {
+        width: 50%;
+    }
+    @include tablet {
+        input {
+            width: 300px;
+        }
+    }
+}
+.menu {
+    display: none;
+    @include tablet {
+        display: flex;
+    }
+}
+.navbar__site {
+    @include tablet {
+        display: none;
+    }
+
+}
